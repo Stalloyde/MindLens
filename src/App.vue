@@ -1,7 +1,11 @@
-<script setup></script>
+<script setup>
+import Button from './components/Button.vue'
+</script>
 
 <template>
-  <main>Test</main>
+  <Button type="primary" />
+  <br />
+  <Button type="secondary" />
 </template>
 
 <style scoped></style>
