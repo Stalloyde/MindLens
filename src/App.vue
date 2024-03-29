@@ -3,15 +3,34 @@ import Button from './components/Button.vue'
 </script>
 
 <template>
-  <Button type="primary" content="leftIconText" />
-  <Button type="primary" content="rightIconText" />
-  <Button type="primary" content="text" />
-  <Button type="primary" content="icon" />
-  <br />
-  <Button type="secondary" content="leftIconText" />
-  <Button type="secondary" content="rightIconText" />
-  <Button type="secondary" content="text" />
-  <Button type="secondary" content="icon" />
-</template>
+  <div>
+    <Button />
+  </div>
+  <div>
+    <Button type="primary" content="leftIconText" />
+  </div>
+  <div>
+    <Button type="primary" content="rightIconText" />
+  </div>
+  <div>
+    <Button type="primary" content="text" />
+  </div>
+  <div>
+    <Button type="primary" content="icon" />
+  </div>
 
-<style scoped></style>
+  <br />
+
+  <div>
+    <Button type="secondary" content="leftIconText" />
+  </div>
+  <div>
+    <Button type="secondary" content="rightIconText" />
+  </div>
+  <div>
+    <Button type="secondary" content="text" />
+  </div>
+  <div>
+    <Button type="secondary" content="icon" />
+  </div>
+</template>
