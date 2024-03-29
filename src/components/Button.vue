@@ -1,10 +1,15 @@
 <script setup>
+import IconPrimary from './icons/arrow-right-primary.svg'
+import IconSecondary from './icons/arrow-right-secondary.svg'
 defineProps(['type'])
 </script>
 
 <template>
   <button :class="type">
-    <p>Icon</p>
+    <p>
+      <img v-if="type === 'primary'" :src="IconPrimary" />
+      <img v-else :src="IconSecondary" />
+    </p>
     <p>Action</p>
   </button>
 </template>
@@ -15,11 +20,13 @@ button {
   padding: 6px 12px;
   gap: 4px;
   border-radius: 8px;
+  align-items: center;
 }
 
 .primary {
   background-color: #f7ba50;
   border: 0px;
+  color: #0c0d0d;
 }
 
 .secondary {
@@ -37,5 +44,10 @@ button {
 
 .primary:hover {
   background-color: #f5ab2b;
+}
+
+img {
+  height: 24px;
+  width: 24px;
 }
 </style>

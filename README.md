@@ -33,3 +33,11 @@ npm run build
 ```sh
 npm run lint
 ```
+
+Icon from :
+
+https://www.svgrepo.com/
+
+COLLECTION: Smoothie Line Icons
+LICENSE: CC Attribution License
+AUTHOR: Luka Marr
