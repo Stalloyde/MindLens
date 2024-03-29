@@ -34,4 +34,8 @@ button {
     0px 6px 10px 0px #00000024,
     0px 1px 18px 0px #0000001f;
 }
+
+.primary:hover {
+  background-color: #f5ab2b;
+}
 </style>
