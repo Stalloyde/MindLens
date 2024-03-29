@@ -1,6 +1,9 @@
 <script setup>
 import Icon from './Icon.vue'
-defineProps(['type', 'content'])
+defineProps({
+  type: { type: String, default: 'primary' },
+  content: { type: String, default: 'leftIconText' }
+})
 </script>
 
 <template>
@@ -9,16 +12,16 @@ defineProps(['type', 'content'])
     <p>Action</p>
   </button>
 
-  <button v-else-if="content === 'rightIconText'" :class="type">
+  <button v-if="content === 'rightIconText'" :class="type">
     <p>Action</p>
     <Icon :type="type" />
   </button>
 
-  <button v-else-if="content === 'text'" :class="type">
+  <button v-if="content === 'text'" :class="type">
     <p>Action</p>
   </button>
 
-  <button v-else-if="content === 'icon'" :class="type">
+  <button v-if="content === 'icon'" :class="type">
     <Icon :type="type" />
   </button>
 </template>
