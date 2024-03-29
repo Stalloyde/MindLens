@@ -1,16 +1,35 @@
 <script setup>
 import IconPrimary from './icons/arrow-right-primary.svg'
 import IconSecondary from './icons/arrow-right-secondary.svg'
-defineProps(['type'])
+defineProps(['type', 'content'])
 </script>
 
 <template>
-  <button :class="type">
+  <button v-if="content === 'leftIconText'" :class="type">
     <p>
       <img v-if="type === 'primary'" :src="IconPrimary" />
       <img v-else :src="IconSecondary" />
     </p>
     <p>Action</p>
+  </button>
+
+  <button v-if="content === 'rightIconText'" :class="type">
+    <p>Action</p>
+    <p>
+      <img v-if="type === 'primary'" :src="IconPrimary" />
+      <img v-else :src="IconSecondary" />
+    </p>
+  </button>
+
+  <button v-if="content === 'text'" :class="type">
+    <p>Action</p>
+  </button>
+
+  <button v-if="content === 'icon'" :class="type">
+    <p>
+      <img v-if="type === 'primary'" :src="IconPrimary" />
+      <img v-else :src="IconSecondary" />
+    </p>
   </button>
 </template>
 
