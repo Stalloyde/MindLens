@@ -1,35 +1,25 @@
 <script setup>
-import IconPrimary from './icons/arrow-right-primary.svg'
-import IconSecondary from './icons/arrow-right-secondary.svg'
+import Icon from './Icon.vue'
 defineProps(['type', 'content'])
 </script>
 
 <template>
   <button v-if="content === 'leftIconText'" :class="type">
-    <p>
-      <img v-if="type === 'primary'" :src="IconPrimary" />
-      <img v-else :src="IconSecondary" />
-    </p>
+    <Icon :type="type" />
     <p>Action</p>
   </button>
 
-  <button v-if="content === 'rightIconText'" :class="type">
+  <button v-else-if="content === 'rightIconText'" :class="type">
     <p>Action</p>
-    <p>
-      <img v-if="type === 'primary'" :src="IconPrimary" />
-      <img v-else :src="IconSecondary" />
-    </p>
+    <Icon :type="type" />
   </button>
 
-  <button v-if="content === 'text'" :class="type">
+  <button v-else-if="content === 'text'" :class="type">
     <p>Action</p>
   </button>
 
-  <button v-if="content === 'icon'" :class="type">
-    <p>
-      <img v-if="type === 'primary'" :src="IconPrimary" />
-      <img v-else :src="IconSecondary" />
-    </p>
+  <button v-else-if="content === 'icon'" :class="type">
+    <Icon :type="type" />
   </button>
 </template>
 
@@ -63,10 +53,5 @@ button {
 
 .primary:hover {
   background-color: #f5ab2b;
-}
-
-img {
-  height: 24px;
-  width: 24px;
 }
 </style>
