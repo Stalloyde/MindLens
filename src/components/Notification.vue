@@ -113,10 +113,6 @@ main {
   gap: 16px;
 }
 
-.content {
-  font-weight: normal;
-}
-
 .icon {
   height: 32px;
   width: 32px;
