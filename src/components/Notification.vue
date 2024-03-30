@@ -10,44 +10,19 @@ defineProps({
   notificationType: { type: String, default: 'info' },
   notificationContent: { type: String, default: 'all' }
 })
+
+const iconMap = {
+  info: InfoIcon,
+  error: ErrorIcon,
+  warning: WarningIcon,
+  success: SuccessIcon
+}
 </script>
 
 <template>
-  <dialog open v-if="notificationType === 'info'" :class="[notificationType, notificationContent]">
+  <dialog open :class="[notificationType, notificationContent]">
     <div>
-      <img class="icon" :src="InfoIcon" />
-    </div>
-    <MainSection :notificationContent="notificationContent" :notificationType="notificationType" />
-    <div><img class="closeIcon" :src="CrossIcon" /></div>
-  </dialog>
-
-  <dialog open v-if="notificationType === 'error'" :class="[notificationType, notificationContent]">
-    <div>
-      <img class="icon" :src="ErrorIcon" />
-    </div>
-    <MainSection :notificationContent="notificationContent" :notificationType="notificationType" />
-    <div><img class="closeIcon" :src="CrossIcon" /></div>
-  </dialog>
-
-  <dialog
-    open
-    v-if="notificationType === 'warning'"
-    :class="[notificationType, notificationContent]"
-  >
-    <div>
-      <img class="icon" :src="WarningIcon" />
-    </div>
-    <MainSection :notificationContent="notificationContent" :notificationType="notificationType" />
-    <div><img class="closeIcon" :src="CrossIcon" /></div>
-  </dialog>
-
-  <dialog
-    open
-    v-if="notificationType === 'success'"
-    :class="[notificationType, notificationContent]"
-  >
-    <div>
-      <img class="icon" :src="SuccessIcon" />
+      <img class="icon" :src="iconMap[notificationType]" />
     </div>
     <MainSection :notificationContent="notificationContent" :notificationType="notificationType" />
     <div><img class="closeIcon" :src="CrossIcon" /></div>
