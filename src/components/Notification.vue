@@ -1,5 +1,5 @@
 <script setup>
-import Button from './Button.vue'
+import MainSection from './MainSection.vue'
 import ErrorIcon from './icons/error-circle.svg'
 import InfoIcon from './icons/info-circle.svg'
 import SuccessIcon from './icons/success.svg'
@@ -7,80 +7,49 @@ import WarningIcon from './icons/warning.svg'
 import CrossIcon from './icons/cross.svg'
 
 defineProps({
-  type: { type: String, default: 'info' }
+  notificationType: { type: String, default: 'info' },
+  notificationContent: { type: String, default: 'all' }
 })
 </script>
 
 <template>
-  <dialog open v-if="type === 'info'" class="container">
+  <dialog open v-if="notificationType === 'info'" :class="[notificationType, notificationContent]">
     <div>
       <img class="icon" :src="InfoIcon" />
     </div>
-    <div class="main">
-      <div class="title">A short descriptive header</div>
-      <div class="content">
-        This is a paragraph of information with additional supporting detail or links to help the
-        user understand what they should do.
-      </div>
-      <div class="action">
-        <Button type="secondary" content="text" />
-        <Button content="text" />
-      </div>
-    </div>
+    <MainSection :notificationContent="notificationContent" :notificationType="notificationType" />
     <div><img class="closeIcon" :src="CrossIcon" /></div>
   </dialog>
 
-  <dialog open v-if="type === 'error'" class="container">
+  <dialog open v-if="notificationType === 'error'" :class="[notificationType, notificationContent]">
     <div>
       <img class="icon" :src="ErrorIcon" />
     </div>
-    <div class="main">
-      <div class="title">A short descriptive header</div>
-      <div class="content">
-        CrossIcon CrossIcon CrossIcon CrossIcon This is a paragraph of information with additional
-        supporting detail or links to help the user understand what they should do.
-      </div>
-      <div class="action">
-        <Button type="secondary" content="text" />
-        <Button content="text" />
-      </div>
-    </div>
+    <MainSection :notificationContent="notificationContent" :notificationType="notificationType" />
     <div><img class="closeIcon" :src="CrossIcon" /></div>
   </dialog>
 
-  <dialog open v-if="type === 'warning'" class="container">
+  <dialog
+    open
+    v-if="notificationType === 'warning'"
+    :class="[notificationType, notificationContent]"
+  >
     <div>
       <img class="icon" :src="WarningIcon" />
     </div>
-    <div class="main">
-      <div class="title">A short descriptive header</div>
-      <div class="content">
-        This is a paragraph of information with additional supporting detail or links to help the
-        user understand what they should do.
-      </div>
-      <div class="action">
-        <Button type="secondary" content="text" />
-        <Button content="text" />
-      </div>
-    </div>
+    <MainSection :notificationContent="notificationContent" :notificationType="notificationType" />
     <div><img class="closeIcon" :src="CrossIcon" /></div>
   </dialog>
 
-  <dialog open v-if="type === 'success'" class="container">
+  <dialog
+    open
+    v-if="notificationType === 'success'"
+    :class="[notificationType, notificationContent]"
+  >
     <div>
       <img class="icon" :src="SuccessIcon" />
     </div>
-    <div class="main">
-      <div class="title">A short descriptive header</div>
-      <div class="content">
-        This is a paragraph of information with additional supporting detail or links to help the
-        user understand what they should do.
-      </div>
-      <div class="action">
-        <Button type="secondary" content="text" />
-        <Button content="text" />
-      </div>
-    </div>
+    <MainSection :notificationContent="notificationContent" :notificationType="notificationType" />
     <div><img class="closeIcon" :src="CrossIcon" /></div>
   </dialog>
 </template>
@@ -89,15 +58,48 @@ defineProps({
 dialog {
   display: flex;
   width: 720px;
-  height: 184px;
-  background-color: #f4faff;
-  border: 1px solid #2c75dd;
   border-radius: 4px;
   padding: 24px 24px;
   gap: 12px;
 }
 
-.main {
+.all {
+  height: 184px;
+}
+
+.content {
+  height: 48px;
+  align-items: center;
+}
+
+.titleContent {
+  height: 128px;
+}
+
+.title {
+  height: 80px;
+  align-items: center;
+}
+
+.info {
+  background-color: #f4faff;
+  border: 1px solid #2c75dd;
+}
+
+.error {
+  background-color: #fef5f5;
+  border: 1px solid #cc3123;
+}
+.warning {
+  background-color: #fdf3e1;
+  border: 1px solid #dc5a00;
+}
+.success {
+  background-color: #f8fff2;
+  border: 1px solid #008700;
+}
+
+main {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
