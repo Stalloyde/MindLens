@@ -1,6 +1,6 @@
 <script setup>
-import IconPrimary from './icons/arrow-right-primary.svg'
-import IconSecondary from './icons/arrow-right-secondary.svg'
+import IconPrimary from '../icons/arrow-right-primary.svg'
+import IconSecondary from '../icons/arrow-right-secondary.svg'
 defineProps(['type', 'content'])
 </script>
 

@@ -1,5 +1,6 @@
 <script setup>
 import ButtonIcon from './ButtonIcon.vue'
+
 defineProps({
   type: { type: String, default: 'primary' },
   content: { type: String, default: 'leftIconText' },

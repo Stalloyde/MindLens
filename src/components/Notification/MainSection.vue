@@ -1,5 +1,5 @@
 <script setup>
-import Button from './Button.vue'
+import Button from '../Button/Button.vue'
 
 defineProps({
   notificationType: { type: String, default: 'info' },

@@ -1,10 +1,10 @@
 <script setup>
 import MainSection from './MainSection.vue'
-import ErrorIcon from './icons/error-circle.svg'
-import InfoIcon from './icons/info-circle.svg'
-import SuccessIcon from './icons/success.svg'
-import WarningIcon from './icons/warning.svg'
-import CrossIcon from './icons/cross.svg'
+import ErrorIcon from '../icons/error-circle.svg'
+import InfoIcon from '../icons/info-circle.svg'
+import SuccessIcon from '../icons/success.svg'
+import WarningIcon from '../icons/warning.svg'
+import CrossIcon from '../icons/cross.svg'
 
 defineProps({
   notificationType: { type: String, default: 'info' },
