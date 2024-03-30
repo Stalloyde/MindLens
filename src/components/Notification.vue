@@ -61,6 +61,7 @@ dialog {
   border-radius: 4px;
   padding: 24px 24px;
   gap: 12px;
+  margin: 10px;
 }
 
 .all {

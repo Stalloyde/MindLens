@@ -3,7 +3,5 @@ import Notification from './components/Notification.vue'
 </script>
 
 <template>
-  <div>
-    <Notification notificationType="error" notificationContent="titleContent" />
-  </div>
+  <Notification notificationType="error" notificationContent="all" />
 </template>
