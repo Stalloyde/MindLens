@@ -41,3 +41,23 @@ https://www.svgrepo.com/
 COLLECTION: Smoothie Line Icons
 LICENSE: CC Attribution License
 AUTHOR: Luka Marr
+
+COLLECTION: Solar Bold Icons
+LICENSE: CC Attribution License
+AUTHOR: Solar Icons
+
+COLLECTION: Yandex UI Filled Icons
+LICENSE: MLP License
+AUTHOR: Yandex
+
+COLLECTION: Industrial Sharp Filled UI Icons
+LICENSE: MIT License
+AUTHOR: Siemens
+
+COLLECTION: Element Plus Line Interface Icons
+LICENSE: MIT License
+AUTHOR: element-plus
+
+COLLECTION: Xnix Circular Interface Icons
+LICENSE: CC Attribution License
+AUTHOR: Ankush Syal
