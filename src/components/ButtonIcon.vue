@@ -5,10 +5,8 @@ defineProps(['type', 'content'])
 </script>
 
 <template>
-  <p>
-    <img v-if="type === 'primary'" :src="IconPrimary" />
-    <img v-else :src="IconSecondary" />
-  </p>
+  <img v-if="type === 'primary'" :src="IconPrimary" />
+  <img v-else :src="IconSecondary" />
 </template>
 
 <style scoped>
