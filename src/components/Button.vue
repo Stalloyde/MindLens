@@ -7,21 +7,21 @@ defineProps({
 </script>
 
 <template>
-  <button v-if="content === 'leftIconText'" :class="type">
+  <button v-if="content === 'leftIconText'" :class="[type, content]">
     <Icon :type="type" />
     <p>Action</p>
   </button>
 
-  <button v-if="content === 'rightIconText'" :class="type">
+  <button v-if="content === 'rightIconText'" :class="[type, content]">
     <p>Action</p>
     <Icon :type="type" />
   </button>
 
-  <button v-if="content === 'text'" :class="type">
+  <button v-if="content === 'text'" :class="[type, content]">
     <p>Action</p>
   </button>
 
-  <button v-if="content === 'icon'" :class="type">
+  <button v-if="content === 'icon'" :class="[type, content]">
     <Icon :type="type" />
   </button>
 </template>
@@ -33,6 +33,7 @@ button {
   gap: 4px;
   border-radius: 8px;
   align-items: center;
+  justify-content: center;
 }
 
 .primary {
@@ -56,5 +57,21 @@ button {
 
 .primary:hover {
   background-color: #f5ab2b;
+}
+
+.leftIconText,
+.rightIconText {
+  width: 130px;
+  height: 40px;
+}
+
+.text {
+  width: 98px;
+  height: 40px;
+}
+
+.icon {
+  width: 40px;
+  height: 40px;
 }
 </style>
