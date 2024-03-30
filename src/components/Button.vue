@@ -76,9 +76,15 @@ button {
   height: 40px;
 }
 
-.info {
-  background-color: #f4faff;
-  border: 1px solid #2c75dd;
+.info .primary {
+  background-color: #f7ba50;
+  color: #0c0d0d;
+}
+
+.info .secondary {
+  background-color: #ffffff;
+  border: 1px solid #c75100;
+  color: #c75100;
 }
 
 .error .primary {
