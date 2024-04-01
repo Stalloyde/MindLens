@@ -75,19 +75,6 @@ dialog {
   border: 1px solid #008700;
 }
 
-main {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  gap: 8px;
-  width: 596px;
-}
-
-.action {
-  display: flex;
-  gap: 16px;
-}
-
 .icon {
   height: 32px;
   width: 32px;
@@ -96,5 +83,22 @@ main {
 .closeIcon {
   height: 20px;
   width: 20px;
+}
+
+@media (width < 730px) {
+  .all {
+    width: 330px;
+    height: 312px;
+  }
+
+  .titleContent {
+    width: 330px;
+    height: 200px;
+  }
+
+  .content,
+  .title {
+    width: 330px;
+  }
 }
 </style>

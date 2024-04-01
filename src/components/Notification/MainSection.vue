@@ -60,10 +60,12 @@ const hasAction = computed(() => {
   background-color: #fef5f5;
   border: 1px solid #cc3123;
 }
+
 .warning {
   background-color: #fdf3e1;
   border: 1px solid #dc5a00;
 }
+
 .success {
   background-color: #f8fff2;
   border: 1px solid #008700;
@@ -72,9 +74,10 @@ const hasAction = computed(() => {
 main {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
   gap: 8px;
   width: 596px;
+  line-height: 24px;
+  justify-content: space-between;
 }
 
 .action {
@@ -84,5 +87,13 @@ main {
 
 .content {
   font-weight: normal;
+}
+
+@media (width < 730px) {
+  .action {
+    flex-direction: column;
+    height: 104px;
+    justify-content: flex-end;
+  }
 }
 </style>
