@@ -1,30 +1,36 @@
 <script setup>
 import ButtonIcon from './ButtonIcon.vue'
+import { computed } from 'vue'
 
-defineProps({
+const props = defineProps({
   type: { type: String, default: 'primary' },
   content: { type: String, default: 'leftIconText' },
   notificationType: { type: String, default: 'info' }
 })
+
+const leftIconText = computed(() => {
+  return props.content === 'leftIconText' ? true : false
+})
+
+const rightIconText = computed(() => {
+  return props.content === 'rightIconText' ? true : false
+})
+
+const text = computed(() => {
+  return props.content === 'text' ? true : false
+})
+
+const icon = computed(() => {
+  return props.content === 'icon' ? true : false
+})
 </script>
 
 <template>
-  <button v-if="content === 'leftIconText'" :class="[type, content, notificationType]">
-    <ButtonIcon :type="type" />
-    <p>Action</p>
-  </button>
-
-  <button v-if="content === 'rightIconText'" :class="[type, content, notificationType]">
-    <p>Action</p>
-    <ButtonIcon :type="type" />
-  </button>
-
-  <button v-if="content === 'text'" :class="[type, content, notificationType]">
-    <p>Action</p>
-  </button>
-
-  <button v-if="content === 'icon'" :class="[type, content, notificationType]">
-    <ButtonIcon :type="type" />
+  <button :class="[type, content, notificationType]">
+    <ButtonIcon v-if="leftIconText" :type="type" />
+    <p v-if="!icon || text">Action</p>
+    <ButtonIcon v-if="icon" :type="type" />
+    <ButtonIcon v-if="rightIconText" :type="type" />
   </button>
 </template>
 
