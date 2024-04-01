@@ -1,39 +1,52 @@
 <script setup>
+import { computed } from 'vue'
 import Button from '../Button/Button.vue'
 
-defineProps({
+const props = defineProps({
   notificationType: { type: String, default: 'info' },
   notificationContent: { type: String, default: 'all' }
+})
+
+const hasTitle = computed(() => {
+  if (
+    props.notificationContent === 'all' ||
+    props.notificationContent === 'titleContent' ||
+    props.notificationContent === 'title'
+  ) {
+    return true
+  }
+  return false
+})
+
+const hasContent = computed(() => {
+  if (
+    props.notificationContent === 'all' ||
+    props.notificationContent === 'titleContent' ||
+    props.notificationContent === 'content'
+  ) {
+    return true
+  }
+  return false
+})
+
+const hasAction = computed(() => {
+  return props.notificationContent === 'all' ? true : false
 })
 </script>
 
 <template>
-  <main v-if="notificationContent === 'all'">
-    <div class="title">A short descriptive header</div>
-    <div class="content">
+  <main>
+    <div v-if="hasTitle" class="title">A short descriptive header</div>
+    <div v-if="hasContent && hasTitle" class="content">
       This is a paragraph of information with additional supporting detail or links to help the user
       understand what they should do.
     </div>
-    <div class="action">
+    <div v-if="hasContent && !hasTitle" class="content">A short descriptive header</div>
+
+    <div v-if="hasAction" class="action">
       <Button notificationType="notificationType" type="secondary" content="text" />
       <Button notificationType="notificationType" content="text" />
     </div>
-  </main>
-
-  <main v-if="notificationContent === 'content'">
-    <div class="content">A short descriptive header</div>
-  </main>
-
-  <main v-if="notificationContent === 'titleContent'">
-    <div class="title">A short descriptive header</div>
-    <div class="content">
-      This is a paragraph of information with additional supporting detail or links to help the user
-      understand what they should do.
-    </div>
-  </main>
-
-  <main v-if="notificationContent === 'title'">
-    <div class="title">A short descriptive header</div>
   </main>
 </template>
 

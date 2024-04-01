@@ -80,7 +80,6 @@ main {
   flex-direction: column;
   justify-content: space-evenly;
   gap: 8px;
-  height: 136px;
   width: 596px;
 }
 
