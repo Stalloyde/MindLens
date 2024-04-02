@@ -86,6 +86,7 @@ button {
 .info .primary {
   background-color: #f7ba50;
   color: #0c0d0d;
+  border: 0px;
 }
 
 .info .secondary {
