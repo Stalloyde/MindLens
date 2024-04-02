@@ -44,8 +44,8 @@ const hasAction = computed(() => {
     <div v-if="hasContent && !hasTitle" class="content">A short descriptive header</div>
 
     <div v-if="hasAction" class="action">
-      <Button notificationType="notificationType" type="secondary" content="text" />
-      <Button notificationType="notificationType" content="text" />
+      <Button :notificationType="notificationType" type="secondary" content="text" />
+      <Button :notificationType="notificationType" content="text" />
     </div>
   </main>
 </template>
