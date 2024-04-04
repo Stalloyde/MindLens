@@ -106,7 +106,7 @@ npm install
 npm run dev
 ```
 
-### Compiple and run on Storybook.js
+### Compile and run on Storybook.js
 
 ```sh
 npm run storybook
